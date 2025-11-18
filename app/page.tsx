@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import DreamList from "./DreamList";
 
 // ✅ 드림 리스트용 CSV (Public 시트)
 const SHEET_CSV_URL =
@@ -54,6 +55,7 @@ export default function HomePage() {
   const [dreams, setDreams] = useState<Dream[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<boolean>(false);
+  const ITEMS_PER_PAGE = 10;
 
   // 글로벌 좋아요 맵: { dreamId: likesCount }
   const [likes, setLikes] = useState<LikesMap>({});
@@ -181,6 +183,23 @@ export default function HomePage() {
     // sortMode === "latest"면 그대로 (시트 순서)
     return arr;
   }, [filteredDreams, sortMode, likes]);
+
+
+const [currentPage, setCurrentPage] = useState(0);
+
+const totalItems = sortedDreams.length;
+const totalPages =
+  totalItems === 0 ? 1 : Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+const startIndex = currentPage * ITEMS_PER_PAGE;
+const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, totalItems);
+
+const currentDreams = sortedDreams.slice(startIndex, endIndex);
+
+// 검색어 변경 / 정렬 변경 시 1페이지로 리셋
+useEffect(() => {
+  setCurrentPage(0);
+}, [filteredDreams, sortMode]);
 
   const participantCount = dreams.length;
   const totalAmount = participantCount * 1000;
@@ -528,93 +547,144 @@ export default function HomePage() {
                 참여자들의 꿈
               </h2>
 
-              {sortedDreams.length === 0 ? (
-                <p style={{ fontSize: "14px", color: "#777" }}>
-                  조건에 맞는 꿈이 없습니다. 검색어를 바꿔보세요.
-                </p>
-              ) : (
-                <ul
-                  style={{
-                    listStyle: "none",
-                    padding: 0,
-                    margin: 0,
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "10px",
-                  }}
-                >
-                  {sortedDreams.map((item) => {
-                    const alreadyLiked = likedIds.includes(item.id);
-                    const displayLikes = getDisplayLikes(
-                      item.id,
-                      item.baseLikes
-                    );
-
-                    return (
-                      <li
-                        key={item.id}
+              {totalItems === 0 ? (
+                    <p style={{ fontSize: "14px", color: "#777" }}>
+                      조건에 맞는 꿈이 없습니다. 검색어를 바꿔보세요.
+                    </p>
+                  ) : (
+                    <>
+                      <ul
                         style={{
-                          border: "1px solid #f0f0f5",
-                          borderRadius: "14px",
-                          padding: "12px 14px",
-                          background: "#fafbff",
+                          listStyle: "none",
+                          padding: 0,
+                          margin: 0,
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "10px",
                         }}
                       >
-                        <div
-                          style={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            marginBottom: "6px",
-                          }}
-                        >
-                          <div
-                            style={{
-                              fontSize: "14px",
-                              fontWeight: 600,
-                              marginRight: "8px",
-                              color: "#333",
-                            }}
-                          >
-                            {item.name}
-                          </div>
-                          <button
-                            type="button"
-                            onClick={() =>
-                              handleLike(item.id, item.baseLikes)
-                            }
-                            style={{
-                              display: "inline-flex",
-                              alignItems: "center",
-                              gap: "4px",
-                              border: "none",
-                              background: "transparent",
-                              cursor: "pointer",
-                              fontSize: "14px",
-                              color: alreadyLiked ? "#e53935" : "#888",
-                              padding: "2px 4px",
-                            }}
-                          >
-                            <span>{alreadyLiked ? "♥" : "♡"}</span>
-                            <span>{displayLikes}</span>
-                          </button>
-                        </div>
-                        <div
-                          style={{
-                            fontSize: "13px",
-                            whiteSpace: "pre-line",
-                            color: "#444",
-                            lineHeight: 1.6,
-                          }}
-                        >
-                          {item.dream}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-            </section>
+                        {currentDreams.map((item) => {
+                          const alreadyLiked = likedIds.includes(item.id);
+                          const displayLikes = getDisplayLikes(item.id, item.baseLikes);
+
+                          return (
+                            <li
+                              key={item.id}
+                              style={{
+                                border: "1px solid #f0f0f5",
+                                borderRadius: "14px",
+                                padding: "12px 14px",
+                                background: "#fafbff",
+                              }}
+                            >
+                              <div
+                                style={{
+                                  display: "flex",
+                                  justifyContent: "space-between",
+                                  alignItems: "center",
+                                  marginBottom: "6px",
+                                }}
+                              >
+                                <div
+                                  style={{
+                                    fontSize: "14px",
+                                    fontWeight: 600,
+                                    marginRight: "8px",
+                                    color: "#333",
+                                  }}
+                                >
+                                  {item.name}
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => handleLike(item.id, item.baseLikes)}
+                                  style={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: "4px",
+                                    border: "none",
+                                    background: "transparent",
+                                    cursor: "pointer",
+                                    fontSize: "14px",
+                                    color: alreadyLiked ? "#e53935" : "#888",
+                                    padding: "2px 4px",
+                                  }}
+                                >
+                                  <span>{alreadyLiked ? "♥" : "♡"}</span>
+                                  <span>{displayLikes}</span>
+                                </button>
+                              </div>
+                              <div
+                                style={{
+                                  fontSize: "13px",
+                                  whiteSpace: "pre-line",
+                                  color: "#444",
+                                  lineHeight: 1.6,
+                                }}
+                              >
+                                {item.dream}
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+
+    {/* 🔥 페이지네이션 버튼: 정확히 여기! 🔥 */}
+    <div
+      style={{
+        marginTop: "14px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "8px",
+        fontSize: "13px",
+      }}
+    >
+      <button
+        type="button"
+        onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
+        disabled={currentPage === 0}
+        style={{
+          padding: "6px 12px",
+          borderRadius: "999px",
+          border: "1px solid #ddd",
+          backgroundColor: currentPage === 0 ? "#f5f5f5" : "#fff",
+          color: currentPage === 0 ? "#bbb" : "#333",
+          cursor: currentPage === 0 ? "default" : "pointer",
+        }}
+      >
+        이전
+      </button>
+
+      <span style={{ color: "#666" }}>
+        {currentPage + 1} / {totalPages}
+      </span>
+
+      <button
+        type="button"
+        onClick={() =>
+          setCurrentPage((p) => Math.min(totalPages - 1, p + 1))
+        }
+        disabled={currentPage >= totalPages - 1}
+        style={{
+          padding: "6px 12px",
+          borderRadius: "999px",
+          border: "1px solid #ddd",
+          backgroundColor:
+            currentPage >= totalPages - 1 ? "#f5f5f5" : "#111",
+          color:
+            currentPage >= totalPages - 1 ? "#bbb" : "#fff",
+          cursor:
+            currentPage >= totalPages - 1 ? "default" : "pointer",
+        }}
+      >
+        다음
+      </button>
+    </div>
+  </>
+)}
+</section>
+
           )}
         </div>
 
