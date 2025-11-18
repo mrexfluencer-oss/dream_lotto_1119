@@ -34,13 +34,15 @@ export default function RootLayout({
             "linear-gradient(135deg, #f5f7fb 0%, #eef3ff 50%, #f9f9ff 100%)",
         }}
       >
-        {/* ✅ 상단 고정 헤더 */}
+        {/* ================================== */}
+        {/*            상단 고정 헤더             */}
+        {/* ================================== */}
         <header
           style={{
             position: "sticky",
             top: 0,
             zIndex: 50,
-            backgroundColor: "rgba(248, 250, 252, 0.96)", // 거의 흰색
+            backgroundColor: "rgba(248, 250, 252, 0.96)",
             borderBottom: "1px solid #e2e8f0",
             backdropFilter: "blur(10px)",
           }}
@@ -49,52 +51,49 @@ export default function RootLayout({
             style={{
               maxWidth: "960px",
               margin: "0 auto",
-              padding: "10px 16px 8px",
+              padding: "14px 16px 12px",
               display: "flex",
               flexDirection: "column",
-              gap: "6px",
+              gap: "12px",
+              alignItems: "center",
             }}
           >
-            {/* 제목 + 작은 설명 한 줄 */}
+            {/* 중앙 정렬된 타이틀 */}
             <div
               style={{
+                textAlign: "center",
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "baseline",
-                gap: "8px",
-                flexWrap: "wrap",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "6px",
+                width: "100%",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "2px",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: "18px",
-                    fontWeight: 800,
-                    letterSpacing: "-0.04em",
-                    color: "#111827",
-                  }}
-                >
-                  드림복권 시즌1
-                </span>
-                <span
-                  style={{
-                    fontSize: "11px",
-                    color: "#6b7280",
-                  }}
-                >
-                  천 원으로 서로의 꿈을 잇는 작은 실험
-                </span>
-              </div>
-
-              {/* 오른쪽 작게 시즌 뱃지 */}
               <span
                 style={{
+                  fontSize: "22px",
+                  fontWeight: 800,
+                  letterSpacing: "-0.04em",
+                  color: "#111827",
+                }}
+              >
+                드림복권 시즌1
+              </span>
+
+              <span
+                style={{
+                  fontSize: "12px",
+                  color: "#6b7280",
+                  fontWeight: 500,
+                }}
+              >
+                천 원으로 서로의 꿈을 잇는 작은 실험
+              </span>
+
+              {/* 시즌 뱃지 */}
+              <span
+                style={{
+                  marginTop: "4px",
                   fontSize: "11px",
                   padding: "4px 8px",
                   borderRadius: "999px",
@@ -115,6 +114,7 @@ export default function RootLayout({
                 gap: "8px",
                 fontSize: "13px",
                 flexWrap: "wrap",
+                justifyContent: "center",
                 marginTop: "4px",
               }}
             >
@@ -187,7 +187,9 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* ✅ 페이지 본문 */}
+        {/* ================================== */}
+        {/*              페이지 본문             */}
+        {/* ================================== */}
         <main
           style={{
             maxWidth: "960px",
@@ -201,4 +203,3 @@ export default function RootLayout({
     </html>
   );
 }
-
