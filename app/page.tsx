@@ -228,154 +228,106 @@ useEffect(() => {
             padding: "24px 20px 28px",
           }}
         >
-          {/* 헤더 / 네비 */}
-          <header
+                   {/* 메인 소개 섹션 */}
+          <section
             style={{
               marginBottom: "20px",
-              borderBottom: "1px solid #f0f0f0",
               paddingBottom: "14px",
+              borderBottom: "1px solid #f0f0f0",
             }}
           >
             <div
               style={{
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                gap: "12px",
-                flexWrap: "wrap",
-              }}
-            >
-              <div>
-                <h1
-                  style={{
-                    fontSize: "24px",
-                    fontWeight: 800,
-                    margin: 0,
-                    letterSpacing: "-0.03em",
-                  }}
-                >
-                  드림복권 시즌1
-                </h1>
-                <p
-                  style={{
-                    margin: "4px 0 0",
-                    fontSize: "13px",
-                    color: "#888",
-                  }}
-                >
-                  천 원으로 시작하는, 서로의 꿈을 잇는 작은 실험.
-                </p>
-              </div>
-
-              <nav
-                style={{
-                  display: "flex",
-                  gap: "8px",
-                  fontSize: "13px",
-                  flexWrap: "wrap",
-                }}
-              >
-                <Link
-                  href="/how-to"
-                  style={{
-                    color: "#555",
-                    textDecoration: "none",
-                    padding: "6px 10px",
-                    borderRadius: "999px",
-                    backgroundColor: "#f6f7fb",
-                  }}
-                >
-                  참여 방법
-                </Link>
-                <Link
-                  href="/creator"
-                  style={{
-                    color: "#555",
-                    textDecoration: "none",
-                    padding: "6px 10px",
-                    borderRadius: "999px",
-                    backgroundColor: "#f6f7fb",
-                  }}
-                >
-                  기획자 소개
-                </Link>
-                <Link
-                  href="/faq"
-                  style={{
-                    color: "#555",
-                    textDecoration: "none",
-                    padding: "6px 10px",
-                    borderRadius: "999px",
-                    backgroundColor: "#f6f7fb",
-                  }}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="/contact"
-                  style={{
-                    color: "#555",
-                    textDecoration: "none",
-                    padding: "6px 10px",
-                    borderRadius: "999px",
-                    backgroundColor: "#f6f7fb",
-                  }}
-                >
-                  협업 문의
-                </Link>
-              </nav>
-            </div>
-
-            {/* 소개 + 와디즈 버튼 */}
-            <div
-              style={{
-                marginTop: "14px",
-                display: "flex",
                 flexDirection: "column",
                 gap: "10px",
               }}
             >
-              <p
+              {/* 배지 */}
+              <div
                 style={{
-                  color: "#555",
-                  lineHeight: 1.7,
-                  fontSize: "14px",
-                  margin: 0,
+                  display: "inline-flex",
+                  alignItems: "center",
+                  padding: "4px 10px",
+                  borderRadius: "999px",
+                  backgroundColor: "#eef3ff",
+                  color: "#3b4b9a",
+                  fontSize: "11px",
+                  fontWeight: 600,
                 }}
               >
-                천 원으로 서로의 꿈을 응원하고,
-                <br />
-                100만원으로 나의 꿈을 시작할 수도 있는 곳.
-                <br />
-                꿈의 크기도 중요하지 않고, 현실 가능성도 따지지 않아요.
-                <br />
-                그저 &apos;당신의 이야기&apos;면 됩니다.
-              </p>
+                시즌1 진행 중 · 한 사람의 꿈을 응원하는 1,000원 실험
+              </div>
 
+              {/* 제목 + 설명 */}
               <div>
-                <a
-                  href="https://wadiz-link-placeholder.com" // 와디즈 링크로 교체
-                  target="_blank"
-                  rel="noreferrer"
+                <h1
                   style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "10px 18px",
-                    borderRadius: "999px",
-                    backgroundColor: "#00c4c4",
-                    color: "#fff",
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    textDecoration: "none",
-                    boxShadow: "0 6px 14px rgba(0, 196, 196, 0.35)",
+                    fontSize: "22px",
+                    fontWeight: 700,
+                    margin: 0,
+                    letterSpacing: "-0.03em",
+                    color: "#111827",
                   }}
                 >
-                  와디즈에서 드림복권 참여하기
-                </a>
+                  천 원으로 시작하는, 서로의 꿈을 잇는 작은 실험
+                </h1>
+                <p
+                  style={{
+                    margin: "8px 0 0",
+                    fontSize: "14px",
+                    color: "#4b5563",
+                    lineHeight: 1.6,
+                    whiteSpace: "pre-line",
+                  }}
+                >
+                  천 원으로 서로의 꿈을 응원하고,{"\n"}
+                  100만 원으로 나의 꿈을 시작할 수도 있는 곳.
+                  {"\n"}
+                  꿈의 크기도, 현실 가능성도 따지지 않아요.
+                  {"\n"}
+                  그냥 &apos;당신의 이야기&apos;면 됩니다.
+                </p>
+              </div>
+
+              {/* 와디즈 참여 버튼 */}
+              <a
+                href="https://www.wadiz.kr/"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "10px 18px",
+                  borderRadius: "999px",
+                  border: "none",
+                  background:
+                    "linear-gradient(135deg, #00d0aa 0%, #00c1ff 50%, #3b82f6 100%)",
+                  color: "#ffffff",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  boxShadow: "0 6px 18px rgba(16, 185, 129, 0.35)",
+                  textDecoration: "none",
+                  marginTop: "4px",
+                }}
+              >
+                와디즈에서 드림복권 참여하기
+              </a>
+
+              <div
+                style={{
+                  fontSize: "12px",
+                  color: "#6b7280",
+                  marginTop: "4px",
+                }}
+              >
+                * 참여 방법과 유의사항은 상단 탭의 &apos;참여 방법&apos;에서 확인할 수 있어요.
               </div>
             </div>
-          </header>
+          </section>
+
 
           {/* 참여 현황 */}
           <section
