@@ -5,18 +5,24 @@ export default function TopBar() {
   return (
     <header
       style={{
-        padding: "32px 16px 40px",
+        padding: "48px 16px 60px",
         textAlign: "center",
-        background: "linear-gradient(180deg, #f8faff 0%, #f5f7fb 90%)",
+        color: "#111827",
+        background: `
+          radial-gradient(circle at 20% 20%, #eef2ff 0%, #f8faff 40%, #f5f7fb 100%),
+          url("https://grainy-gradients.vercel.app/noise.svg")
+        `,
+        backgroundSize: "cover",
+        backgroundBlendMode: "soft-light",
+        backdropFilter: "blur(4px)",
       }}
     >
       {/* 제목 */}
       <h1
         style={{
-          fontSize: "28px",
+          fontSize: "30px",
           fontWeight: 800,
           margin: 0,
-          color: "#111827",
           letterSpacing: "-0.03em",
         }}
       >
@@ -27,20 +33,19 @@ export default function TopBar() {
       <p
         style={{
           marginTop: "10px",
-          fontSize: "14px",
-          color: "#6b7280",
+          fontSize: "15px",
+          color: "#555",
           fontWeight: 400,
         }}
       >
         천 원으로 서로의 꿈을 잇는 작은 실험
       </p>
 
-      {/* 시즌 배지 */}
       <div
         style={{
           display: "inline-block",
-          marginTop: "14px",
-          padding: "6px 14px",
+          marginTop: "16px",
+          padding: "8px 16px",
           borderRadius: "999px",
           background: "#eef2ff",
           color: "#4f46e5",
