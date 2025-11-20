@@ -38,154 +38,123 @@ export default function RootLayout({
         {/*            상단 고정 헤더             */}
         {/* ================================== */}
         <header
+  style={{
+    position: "sticky",
+    top: 0,
+    zIndex: 50,
+    backgroundColor: "rgba(255, 255, 255, 0.92)",
+    borderBottom: "1px solid #e5e7eb",
+    backdropFilter: "blur(12px)",
+  }}
+>
+  <div
+    style={{
+      maxWidth: "960px",
+      margin: "0 auto",
+      padding: "18px 16px 12px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "14px",
+    }}
+  >
+    {/* 중앙 타이틀 */}
+    <div
+      style={{
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "4px",
+      }}
+    >
+      <span
+        style={{
+          fontSize: "24px",
+          fontWeight: 800,
+          letterSpacing: "-0.03em",
+          color: "#111827",
+        }}
+      >
+        드림복권 시즌1
+      </span>
+
+      <span
+        style={{
+          fontSize: "13px",
+          color: "#6b7280",
+          fontWeight: 500,
+        }}
+      >
+        천 원으로 서로의 꿈을 잇는 작은 실험
+      </span>
+
+      <span
+        style={{
+          marginTop: "6px",
+          fontSize: "11px",
+          padding: "4px 10px",
+          borderRadius: "999px",
+          backgroundColor: "#e5e8ff",
+          color: "#4338ca",
+          fontWeight: 600,
+        }}
+      >
+        시즌1 진행 중
+      </span>
+    </div>
+
+    {/* 네비게이션 */}
+    <nav
+      style={{
+        display: "flex",
+        gap: "6px",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        fontSize: "12px",
+      }}
+    >
+      <Link
+        href="/"
+        style={{
+          padding: "5px 10px",
+          borderRadius: "999px",
+          backgroundColor: "#111827",
+          color: "#fff",
+          fontWeight: 600,
+          textDecoration: "none",
+        }}
+      >
+        홈
+      </Link>
+
+      {[
+        { href: "/how-to", label: "참여 방법" },
+        { href: "/creator", label: "기획자 소개" },
+        { href: "/faq", label: "FAQ" },
+        { href: "/contact", label: "협업 및 문의" },
+      ].map((item) => (
+        <Link
+          key={item.href}
+          href={item.href}
           style={{
-            position: "sticky",
-            top: 0,
-            zIndex: 50,
-            backgroundColor: "rgba(248, 250, 252, 0.96)",
-            borderBottom: "1px solid #e2e8f0",
-            backdropFilter: "blur(10px)",
+            padding: "5px 10px",
+            borderRadius: "999px",
+            backgroundColor: "#f3f4f6",
+            color: "#374151",
+            fontWeight: 500,
+            textDecoration: "none",
+            whiteSpace: "nowrap",
           }}
         >
-          <div
-            style={{
-              maxWidth: "960px",
-              margin: "0 auto",
-              padding: "14px 16px 12px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "12px",
-              alignItems: "center",
-            }}
-          >
-            {/* 중앙 정렬된 타이틀 */}
-            <div
-              style={{
-                textAlign: "center",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                gap: "6px",
-                width: "100%",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "22px",
-                  fontWeight: 800,
-                  letterSpacing: "-0.04em",
-                  color: "#111827",
-                }}
-              >
-                드림복권 시즌1
-              </span>
+          {item.label}
+        </Link>
+      ))}
+    </nav>
 
-              <span
-                style={{
-                  fontSize: "12px",
-                  color: "#6b7280",
-                  fontWeight: 500,
-                }}
-              >
-                천 원으로 서로의 꿈을 잇는 작은 실험
-              </span>
+      </div>
+    </header>
 
-              {/* 시즌 뱃지 */}
-              <span
-                style={{
-                  marginTop: "4px",
-                  fontSize: "11px",
-                  padding: "4px 8px",
-                  borderRadius: "999px",
-                  backgroundColor: "#eef2ff",
-                  color: "#4f46e5",
-                  fontWeight: 600,
-                  whiteSpace: "nowrap",
-                }}
-              >
-                시즌1 진행 중
-              </span>
-            </div>
-
-            {/* 네비게이션 탭 */}
-            <nav
-              style={{
-                display: "flex",
-                gap: "8px",
-                fontSize: "13px",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                marginTop: "4px",
-              }}
-            >
-              <Link
-                href="/"
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                  backgroundColor: "#111827",
-                  color: "#ffffff",
-                  fontWeight: 500,
-                }}
-              >
-                홈
-              </Link>
-
-              <Link
-                href="/how-to"
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                  backgroundColor: "#f3f4f6",
-                  color: "#374151",
-                }}
-              >
-                참여 방법
-              </Link>
-
-              <Link
-                href="/creator"
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                  backgroundColor: "#f3f4f6",
-                  color: "#374151",
-                }}
-              >
-                기획자 소개
-              </Link>
-
-              <Link
-                href="/faq"
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                  backgroundColor: "#f3f4f6",
-                  color: "#374151",
-                }}
-              >
-                FAQ
-              </Link>
-
-              <Link
-                href="/contact"
-                style={{
-                  padding: "6px 10px",
-                  borderRadius: "999px",
-                  textDecoration: "none",
-                  backgroundColor: "#f3f4f6",
-                  color: "#374151",
-                }}
-              >
-                협업 및 문의
-              </Link>
-            </nav>
-          </div>
-        </header>
 
         {/* ================================== */}
         {/*              페이지 본문             */}
