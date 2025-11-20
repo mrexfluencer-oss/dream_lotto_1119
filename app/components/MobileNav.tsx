@@ -1,3 +1,4 @@
+// app/components/MobileNav.tsx
 "use client";
 
 import { useState } from "react";
@@ -6,6 +7,9 @@ import Link from "next/link";
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
 
+  // 메뉴 클릭 시 자동 닫히기
+  const closeMenu = () => setOpen(false);
+
   return (
     <>
       {/* 햄버거 버튼 */}
@@ -13,92 +17,124 @@ export default function MobileNav() {
         onClick={() => setOpen(true)}
         style={{
           position: "fixed",
-          top: "16px",
+          top: "18px",
           right: "16px",
-          zIndex: 50,
-          width: "36px",
-          height: "36px",
-          borderRadius: "8px",
-          background: "#fff",
-          border: "1px solid #ddd",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          zIndex: 1000,
+          background: "transparent",
+          border: "none",
           cursor: "pointer",
+          fontSize: "28px",
         }}
       >
         ☰
       </button>
 
-      {/* 오버레이 전체 영역 */}
+      {/* 오버레이 */}
       {open && (
         <div
-          onClick={() => setOpen(false)}
+          onClick={closeMenu}
           style={{
             position: "fixed",
             inset: 0,
-            background: "rgba(0,0,0,0.5)",
-            zIndex: 40,
+            background: "rgba(0,0,0,0.4)",
+            zIndex: 900,
           }}
-        ></div>
+        />
       )}
 
-      {/* 슬라이드 메뉴 */}
-      <nav
+      {/* 메뉴 패널 */}
+      <div
         style={{
           position: "fixed",
           top: 0,
-          right: open ? 0 : "-260px",
-          width: "260px",
-          height: "100vh",
+          right: open ? 0 : "-70%",
+          width: "70%",
+          height: "100%",
           background: "#fff",
-          zIndex: 50,
-          padding: "24px",
+          boxShadow: "-4px 0 16px rgba(0,0,0,0.1)",
+          padding: "20px",
+          zIndex: 1001,
+          transition: "right 0.28s ease",
           display: "flex",
           flexDirection: "column",
-          gap: "20px",
-          transition: "right 0.3s ease",
-          boxShadow: "-4px 0 16px rgba(0,0,0,0.08)",
+          gap: "18px",
         }}
       >
+        {/* 닫기 버튼 */}
         <button
-          onClick={() => setOpen(false)}
+          onClick={closeMenu}
           style={{
-            alignSelf: "flex-end",
-            background: "none",
+            background: "transparent",
             border: "none",
-            fontSize: "20px",
+            fontSize: "24px",
+            alignSelf: "flex-end",
             cursor: "pointer",
           }}
         >
           ✕
         </button>
 
-        <Link href="/" style={linkStyle}>Home</Link>
+        {/* 메뉴 리스트 */}
+        <Link
+          href="/"
+          onClick={closeMenu}
+          style={menuStyle}
+        >
+          홈
+        </Link>
 
+        {/* About → 두 개의 하위 메뉴 */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <span style={{ fontWeight: 600, color: "#333" }}>About</span>
-          <Link href="/project" style={subLinkStyle}>프로젝트 소개</Link>
-          <Link href="/creator" style={subLinkStyle}>기획자 소개</Link>
+          <p style={{ fontWeight: 600, margin: 0 }}>About</p>
+
+          <Link
+            href="/project"
+            onClick={closeMenu}
+            style={submenuStyle}
+          >
+            프로젝트 소개
+          </Link>
+
+          <Link
+            href="/creator"
+            onClick={closeMenu}
+            style={submenuStyle}
+          >
+            기획자 소개
+          </Link>
         </div>
 
-        <Link href="/faq" style={linkStyle}>FAQ</Link>
-        <Link href="/contact" style={linkStyle}>Contact</Link>
-      </nav>
+        <Link
+          href="/faq"
+          onClick={closeMenu}
+          style={menuStyle}
+        >
+          FAQ
+        </Link>
+
+        <Link
+          href="/contact"
+          onClick={closeMenu}
+          style={menuStyle}
+        >
+          협업 및 문의
+        </Link>
+      </div>
     </>
   );
 }
 
-const linkStyle = {
-  color: "#333",
+// 스타일 분리
+const menuStyle: React.CSSProperties = {
   fontSize: "16px",
+  fontWeight: 600,
   textDecoration: "none",
-  padding: "4px 0",
+  color: "#333",
 };
 
-const subLinkStyle = {
+const submenuStyle: React.CSSProperties = {
   marginLeft: "12px",
   fontSize: "14px",
-  color: "#666",
+  color: "#555",
   textDecoration: "none",
 };
