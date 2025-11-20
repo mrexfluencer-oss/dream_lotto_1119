@@ -7,7 +7,6 @@ import Link from "next/link";
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
 
-  // 메뉴 클릭 시 자동 닫히기
   const closeMenu = () => setOpen(false);
 
   return (
@@ -42,7 +41,7 @@ export default function MobileNav() {
         />
       )}
 
-      {/* 메뉴 패널 */}
+      {/* 패널 */}
       <div
         style={{
           position: "fixed",
@@ -74,49 +73,28 @@ export default function MobileNav() {
           ✕
         </button>
 
-        {/* 메뉴 리스트 */}
-        <Link
-          href="/"
-          onClick={closeMenu}
-          style={menuStyle}
-        >
+        {/* 메뉴 */}
+        <Link href="/" onClick={closeMenu} style={menuStyle}>
           홈
         </Link>
 
-        {/* About → 두 개의 하위 메뉴 */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <p style={{ fontWeight: 600, margin: 0 }}>About</p>
 
-          <Link
-            href="/project"
-            onClick={closeMenu}
-            style={submenuStyle}
-          >
+          <Link href="/project" onClick={closeMenu} style={submenuStyle}>
             프로젝트 소개
           </Link>
 
-          <Link
-            href="/creator"
-            onClick={closeMenu}
-            style={submenuStyle}
-          >
+          <Link href="/creator" onClick={closeMenu} style={submenuStyle}>
             기획자 소개
           </Link>
         </div>
 
-        <Link
-          href="/faq"
-          onClick={closeMenu}
-          style={menuStyle}
-        >
+        <Link href="/faq" onClick={closeMenu} style={menuStyle}>
           FAQ
         </Link>
 
-        <Link
-          href="/contact"
-          onClick={closeMenu}
-          style={menuStyle}
-        >
+        <Link href="/contact" onClick={closeMenu} style={menuStyle}>
           협업 및 문의
         </Link>
       </div>
@@ -124,7 +102,6 @@ export default function MobileNav() {
   );
 }
 
-// 스타일 분리
 const menuStyle: React.CSSProperties = {
   fontSize: "16px",
   fontWeight: 600,
