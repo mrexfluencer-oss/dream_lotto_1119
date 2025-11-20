@@ -106,54 +106,96 @@ export default function RootLayout({
 
     {/* 네비게이션 */}
     <nav
-      style={{
-        display: "flex",
-        gap: "6px",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        fontSize: "12px",
-      }}
-    >
-      <Link
-        href="/"
-        style={{
-          padding: "5px 10px",
-          borderRadius: "999px",
-          backgroundColor: "#111827",
-          color: "#fff",
-          fontWeight: 600,
-          textDecoration: "none",
-        }}
-      >
-        홈
-      </Link>
+  style={{
+    display: "flex",
+    gap: "6px",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    fontSize: "12px",
+  }}
+>
+  {/* 홈 */}
+  <Link
+    href="/"
+    style={{
+      padding: "5px 10px",
+      borderRadius: "999px",
+      backgroundColor: "#111827",
+      color: "#fff",
+      fontWeight: 600,
+      textDecoration: "none",
+    }}
+  >
+    홈
+  </Link>
 
-      {[
-        { href: "/how-to", label: "참여 방법" },
-        { href: "/creator", label: "기획자 소개" },
-        { href: "/faq", label: "FAQ" },
-        { href: "/contact", label: "협업 및 문의" },
-      ].map((item) => (
-        <Link
-          key={item.href}
-          href={item.href}
-          style={{
-            padding: "5px 10px",
-            borderRadius: "999px",
-            backgroundColor: "#f3f4f6",
-            color: "#374151",
-            fontWeight: 500,
-            textDecoration: "none",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {item.label}
-        </Link>
-      ))}
-    </nav>
+  {/* 프로젝트 소개 */}
+  <Link
+    href="/project"
+    style={{
+      padding: "5px 10px",
+      borderRadius: "999px",
+      backgroundColor: "#f3f4f6",
+      color: "#374151",
+      fontWeight: 500,
+      textDecoration: "none",
+      whiteSpace: "nowrap",
+    }}
+  >
+    프로젝트 소개
+  </Link>
 
-      </div>
-    </header>
+  {/* 기획자 소개 */}
+  <Link
+    href="/creator"
+    style={{
+      padding: "5px 10px",
+      borderRadius: "999px",
+      backgroundColor: "#f3f4f6",
+      color: "#374151",
+      fontWeight: 500,
+      textDecoration: "none",
+      whiteSpace: "nowrap",
+    }}
+  >
+    기획자 소개
+  </Link>
+
+  {/* FAQ */}
+  <Link
+    href="/faq"
+    style={{
+      padding: "5px 10px",
+      borderRadius: "999px",
+      backgroundColor: "#f3f4f6",
+      color: "#374151",
+      fontWeight: 500,
+      textDecoration: "none",
+      whiteSpace: "nowrap",
+    }}
+  >
+    FAQ
+  </Link>
+
+  {/* 협업 및 문의 */}
+  <Link
+    href="/contact"
+    style={{
+      padding: "5px 10px",
+      borderRadius: "999px",
+      backgroundColor: "#f3f4f6",
+      color: "#374151",
+      fontWeight: 500,
+      textDecoration: "none",
+      whiteSpace: "nowrap",
+    }}
+  >
+    협업 및 문의
+  </Link>
+</nav>
+
+    </div>
+  </header>
 
 
         {/* ================================== */}
