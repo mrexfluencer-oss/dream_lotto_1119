@@ -301,53 +301,61 @@ export default function HomePage() {
                       letterSpacing: "-0.02em",
                       color: "#111827",
                       lineHeight: 1.32,
-                      marginBottom: "14px", // 제목 아래 여백 증가 → 가독성 상승
+                      marginBottom: "12px",
                     }}
                   >
                     천 원으로 시작하는, 서로의 꿈을 잇는 작은 실험
                   </h1>
 
-                  {/* 본문 */}
-                  <p
+                  {/* 본문을 카드처럼 감싸서 정렬 안정화 */}
+                  <div
                     style={{
-                      fontSize: "15px",
-                      fontWeight: 500,
-                      color: "#1f2937",
-                      lineHeight: 1.85,
-                      whiteSpace: "pre-line",
-                      borderLeft: "3px solid rgba(0,0,0,0.08)",
-                      paddingLeft: "14px",
-                      marginBottom: "18px",
-                      maxWidth: "340px", // 본문 줄 길이 제한 → 가독성 대폭 증가
+                      padding: "12px 14px",
+                      borderRadius: "12px",
+                      backgroundColor: "#f9fafb",
+                      border: "1px solid #e5e7eb",
+                      maxWidth: "360px",
                     }}
                   >
-                    천 원으로 서로의 꿈을 응원하고,{"\n"}
-                    100만 원으로 나의 꿈을 시작할 수도 있는 곳.{"\n"}
-                    꿈의 크기도, 현실 가능성도 따지지 않아요.{"\n"}
-                    그냥{' '}
-                    <span style={{ color: "#2563eb", fontWeight: 700 }}>
-                      당신의 이야기
-                    </span>
-                    면 됩니다.
-                  </p>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: "15px",
+                        fontWeight: 500,
+                        color: "#1f2937",
+                        lineHeight: 1.9,
+                        whiteSpace: "pre-line",
+                      }}
+                    >
+                      천 원으로 서로의 꿈을 응원하고,{"\n"}
+                      100만원으로 나의 꿈을 시작할 수도 있는 곳.{"\n"}
+                      꿈의 크기도, 현실 가능성도 따지지 않아요.{"\n"}
+                      그냥{" "}
+                      <span style={{ color: "#2563eb", fontWeight: 700 }}>
+                        당신의 이야기
+                      </span>
+                      면 됩니다.
+                    </p>
+                  </div>
 
-                  {/* 버튼 2개 (가로 정렬) */}
+                  {/* 버튼 2개 – 가로 정렬, 좁으면 자동 줄바꿈 */}
                   <div
                     style={{
                       display: "flex",
                       gap: "10px",
                       flexWrap: "wrap",
-                      marginBottom: "12px",
+                      marginTop: "16px",
+                      maxWidth: "360px",
                     }}
                   >
-                    {/* 참여 버튼 */}
+                    {/* 드림로또 참여하기 */}
                     <a
                       href="https://www.wadiz.kr/"
                       target="_blank"
                       rel="noreferrer"
                       style={{
-                        flex: "1",
-                        minWidth: "160px",
+                        flex: 1,
+                        minWidth: "150px",
                         padding: "10px 18px",
                         borderRadius: "999px",
                         textAlign: "center",
@@ -363,12 +371,12 @@ export default function HomePage() {
                       드림로또 참여하기
                     </a>
 
-                    {/* 프로젝트 소개 버튼 */}
+                    {/* 프로젝트 소개 */}
                     <a
                       href="/project"
                       style={{
-                        flex: "1",
-                        minWidth: "160px",
+                        flex: 1,
+                        minWidth: "150px",
                         padding: "10px 18px",
                         borderRadius: "999px",
                         textAlign: "center",
@@ -388,10 +396,11 @@ export default function HomePage() {
                     style={{
                       fontSize: "12px",
                       color: "#6b7280",
-                      marginTop: "4px",
+                      marginTop: "6px",
+                      maxWidth: "360px",
                     }}
                   >
-                    * 자세한 사항은 &apos;프로젝트 소개&apos;에서 확인하실 수 있습니다.
+                    * 자세한 사항은 &apos;프로젝트 소개&apos;에서 확인하실 수 있어요.
                   </div>
                 </div>
 
