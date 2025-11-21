@@ -6,11 +6,15 @@ import TopBar from "./components/TopBar";
 import MobileNav from "./components/MobileNav";
 
 export const metadata: Metadata = {
-  title: "드림복권 시즌1",
+  title: "드림로또 시즌1",
   description: "천 원으로 서로의 꿈을 잇는 작은 실험",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ko">
       <body
@@ -20,13 +24,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           padding: 0,
         }}
       >
-        {/* 상단 고정바 */}
-        <TopBar />
+        {/* 🔒 상단 영역 전체를 고정 */}
+        <div
+          style={{
+            position: "sticky",
+            top: 0,
+            zIndex: 50,
+          }}
+        >
+          <TopBar />
+          <MobileNav />
+        </div>
 
-        {/* 햄버거 네비게이션 */}
-        <MobileNav />
-
-        {/* 모든 페이지의 콘텐츠 */}
+        {/* 페이지 내용 */}
         <main
           style={{
             maxWidth: "960px",
