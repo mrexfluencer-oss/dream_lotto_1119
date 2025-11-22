@@ -305,59 +305,22 @@ export default function HomePage() {
       서로의 꿈을 잇는 작은 실험
     </h1>
 
-    {/* 본문 박스 */}
-    <div
-  style={{
-    padding: "16px 18px",
-    borderRadius: "12px",
-    backgroundColor: "#f9fafb",
-    border: "1px solid #e5e7eb",
-    width: "100%",
-    marginBottom: "16px",
-    boxSizing: "border-box",
-  }}
->
-  {/* 문단 1 */}
-  <p
-    style={{
-      margin: "0 0 8px",
-      fontSize: "15px",
-      fontWeight: 500,
-      color: "#111827",
-      lineHeight: 1.7,
-    }}
-  >
-    천 원으로 서로의 꿈을 응원하고,
-    100만 원으로 내 꿈을 시작할 수 있는 곳이에요.
+      {/* 본문 박스 */}
+<div className="intro-box">
+  <p className="intro-p">
+    천 원으로 서로의 꿈을 응원하고,<br />
+    100만 원으로{" "}
+    <span className="intro-highlight">내 꿈을 시작할 수 있는 곳</span>
+    이에요.
   </p>
 
-  {/* 문단 2 */}
-  <p
-    style={{
-      margin: "0 0 8px",
-      fontSize: "14px",
-      fontWeight: 400,
-      color: "#4b5563",
-      lineHeight: 1.7,
-    }}
-  >
+  <p className="intro-p">
     꿈의 크기도, 현실 가능성도 따지지 않아요.
   </p>
 
-  {/* 문단 3 (키워드만 강조) */}
-  <p
-    style={{
-      margin: 0,
-      fontSize: "14px",
-      fontWeight: 400,
-      color: "#4b5563",
-      lineHeight: 1.7,
-    }}
-  >
+  <p className="intro-p">
     그냥{" "}
-    <span style={{ color: "#2563eb", fontWeight: 600 }}>
-      당신의 이야기
-    </span>
+    <span className="intro-highlight">당신의 이야기</span>
     면 됩니다.
   </p>
 </div>

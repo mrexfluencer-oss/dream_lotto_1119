@@ -1,6 +1,6 @@
 // app/api/likes/route.ts
 const SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbwYkeSFH7YgdM2U70ReQX5uGZyWG9AyQibojwtAphm0vN-TX8NvU3QnoC7IVC8E1xWP/exec"; // 네 웹앱 URL
+  "https://script.google.com/macros/s/AKfycbzJOZwBgSAsUO8rcdE4zNWf7Rlzu0TJnV7Gw5DMjXZxxgCV4M-PJ7ScRNXPvbSnwjFR/exec"; // 네 웹앱 URL
 
 export async function GET() {
   try {

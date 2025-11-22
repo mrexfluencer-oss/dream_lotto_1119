@@ -24,3 +24,96 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* 드림복권 인트로 레이아웃 */
+.intro-section {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 모바일(태블릿 이하)에서는 세로(column)로 쌓기 */
+@media (max-width: 768px) {
+  .intro-section {
+    flex-direction: column;
+  }
+
+  .intro-image-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+/* 데스크탑에서는 가로(row) 배치 */
+@media (min-width: 769px) {
+  .intro-section {
+    flex-direction: row;
+  }
+
+  .intro-image-wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+}
+
+/* 본문 박스 스타일 */
+.intro-box {
+  padding: 16px 18px;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+/* 문단 공통 */
+.intro-p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.7;
+  white-space: normal;
+}
+
+/* 강조 텍스트 */
+.intro-highlight {
+  color: #2563eb;
+  font-weight: 900;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 640px) {
+  .intro-box {
+    padding: 14px 14px;
+  }
+
+  .intro-p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+}
+
+/* 🔻 모바일 최적화 */
+@media (max-width: 768px) {
+  .intro-copy-box {
+    padding: 14px 14px;
+    border-radius: 10px;
+  }
+
+  .intro-copy-text {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left; /* 세로 모드에서 자연스럽게 */
+  }
+}
+
+/* 🔺 데스크탑(넓은 화면)에서 약간 여유 있게 */
+@media (min-width: 1024px) {
+  .intro-copy-box {
+    padding: 18px 22px;
+  }
+}
