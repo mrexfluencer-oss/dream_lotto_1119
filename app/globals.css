@@ -118,7 +118,7 @@ body {
   }
 }
 
-/* 인트로 섹션 공통 레이아웃 */
+/* 인트로 섹션 레이아웃 */
 .intro-section {
   display: flex;
   gap: 20px;
@@ -127,21 +127,19 @@ body {
   align-items: flex-start;
 }
 
-/* 이미지 영역 */
 .intro-image-wrapper {
   flex: 0 0 360px;
   max-width: 360px;
   margin: 0 auto;
 }
 
-/* 텍스트 영역 */
 .intro-text-wrapper {
   flex: 1;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* 🔻 모바일(좁은 화면)에서는 위아래로 쌓기 */
+/* 모바일(태블릿 이하)에서는 세로 배치 */
 @media (max-width: 768px) {
   .intro-section {
     flex-direction: column;

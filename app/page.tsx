@@ -220,164 +220,186 @@ export default function HomePage() {
           }}
         >
           {/* 메인 소개 섹션 */}
-          <section
-            style={{
-              marginBottom: "20px",
-              paddingBottom: "14px",
-              borderBottom: "1px solid #f0f0f0",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "10px",
-              }}
-            >
-              {/* 배지 */}
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  padding: "4px 10px",
-                  borderRadius: "999px",
-                  backgroundColor: "#eef3ff",
-                  color: "#3b4b9a",
-                  fontSize: "11px",
-                  fontWeight: 600,
-                }}
-              >
-                시즌1 진행 중 · 한 사람의 꿈을 응원하는 1,000원 실험
-              </div>
-
-              {/* 이미지 + 텍스트 묶음 */}
-<div
+         {/* 메인 소개 섹션 */}
+<section
   style={{
-    display: "flex",
-    flexDirection: typeof window !== "undefined" && window.innerWidth < 640 ? "column" : "row",
-    width: "100%",
-    gap: "20px",
-    boxSizing: "border-box",
+    marginBottom: "20px",
+    paddingBottom: "14px",
+    borderBottom: "1px solid #f0f0f0",
   }}
 >
-  {/* 이미지 영역 */}
   <div
     style={{
-      width: "100%",
-      maxWidth: typeof window !== "undefined" && window.innerWidth < 640 ? "100%" : "360px",
-      margin: "0 auto",
+      display: "flex",
+      flexDirection: "column",
+      gap: "10px",
     }}
   >
-    <img
-      src="/dream-lotto-flow.png"
-      alt="드림로또 인포그래픽"
-      style={{
-        width: "100%",
-        height: "auto",
-        borderRadius: "12px",
-        border: "1px solid #e5e7eb",
-      }}
-    />
-  </div>
-
-  {/* 오른쪽 텍스트 영역 */}
-  <div
-    style={{
-      flex: 1,
-      width: "100%",
-      boxSizing: "border-box",
-    }}
-  >
-    {/* 제목 */}
-    <h1
-      style={{
-        fontSize: "24px",
-        fontWeight: 700,
-        margin: 0,
-        letterSpacing: "-0.02em",
-        color: "#111827",
-        lineHeight: 1.35,
-        marginBottom: "12px",
-        whiteSpace: "pre-line",
-      }}
-    >
-      천 원으로 시작하는,{"\n"}
-      서로의 꿈을 잇는 작은 실험
-    </h1>
-
-      {/* 본문 박스 */}
-<div className="intro-box">
-  <p className="intro-p">
-    천 원으로 서로의 꿈을 응원하고,<br />
-    100만 원으로{" "}
-    <span className="intro-highlight">내 꿈을 시작할 수 있는 곳</span>
-    이에요.
-  </p>
-
-  <p className="intro-p">
-    꿈의 크기도, 현실 가능성도 따지지 않아요.
-  </p>
-
-  <p className="intro-p">
-    그냥{" "}
-    <span className="intro-highlight">당신의 이야기</span>
-    면 됩니다.
-  </p>
-</div>
-
-
-    {/* 버튼 */}
+    {/* 배지 */}
     <div
       style={{
-        display: "flex",
-        gap: "10px",
-        flexWrap: "wrap",
-        width: "100%",
+        display: "inline-flex",
+        alignItems: "center",
+        padding: "4px 10px",
+        borderRadius: "999px",
+        backgroundColor: "#eef3ff",
+        color: "#3b4b9a",
+        fontSize: "11px",
+        fontWeight: 600,
       }}
     >
-      <a
-        href="https://www.wadiz.kr/"
-        target="_blank"
-        rel="noreferrer"
-        style={{
-          flex: 1,
-          padding: "10px 16px",
-          borderRadius: "999px",
-          textAlign: "center",
-          background:
-            "linear-gradient(135deg, #00d0aa 0%, #00c1ff 50%, #3b82f6 100%)",
-          color: "#ffffff",
-          fontSize: "14px",
-          fontWeight: 600,
-          textDecoration: "none",
-        }}
-      >
-        드림로또 참여하기
-      </a>
+      시즌1 진행 중 · 한 사람의 꿈을 응원하는 1,000원 실험
+    </div>
 
-      <a
-        href="/project"
-        style={{
-          flex: 1,
-          padding: "10px 16px",
-          borderRadius: "999px",
-          textAlign: "center",
-          border: "1px solid #d1d9ff",
-          backgroundColor: "#f5f7ff",
-          color: "#1d4ed8",
-          fontSize: "14px",
-          fontWeight: 600,
-          textDecoration: "none",
-        }}
-      >
-        드림로또 프로젝트 소개
-      </a>
+    {/* 이미지 + 텍스트 묶음 */}
+    <div className="intro-section">
+      {/* 이미지 영역 */}
+      <div className="intro-image-wrapper">
+        <img
+          src="/dream-lotto-flow.png"
+          alt="드림로또 인포그래픽"
+          style={{
+            width: "100%",
+            height: "auto",
+            borderRadius: "12px",
+            border: "1px solid #e5e7eb",
+          }}
+        />
+      </div>
+
+      {/* 오른쪽 텍스트 영역 */}
+      <div className="intro-text-wrapper">
+        {/* 제목 */}
+        <h1
+          style={{
+            fontSize: "24px",
+            fontWeight: 700,
+            margin: 0,
+            letterSpacing: "-0.02em",
+            color: "#111827",
+            lineHeight: 1.35,
+            marginBottom: "12px",
+            whiteSpace: "pre-line",
+          }}
+        >
+          천 원으로 시작하는,{"\n"}
+          서로의 꿈을 잇는 작은 실험
+        </h1>
+
+        {/* 본문 박스 */}
+        <div
+          style={{
+            padding: "16px 18px",
+            borderRadius: "12px",
+            backgroundColor: "#f9fafb",
+            border: "1px solid #e5e7eb",
+            width: "100%",
+            marginBottom: "16px",
+            boxSizing: "border-box",
+          }}
+        >
+          {/* 문단 1 */}
+          <p
+            style={{
+              margin: "0 0 12px",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#111827",
+              lineHeight: 1.7,
+            }}
+          >
+            천 원으로 서로의 꿈을 응원하고,
+            <br />
+            100만 원으로{" "}
+            <span style={{ color: "#2563eb", fontWeight: 900 }}>
+              내 꿈을 시작할 수 있는 곳
+            </span>
+            이에요.
+          </p>
+
+          {/* 문단 2 */}
+          <p
+            style={{
+              margin: "0 0 12px",
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#111827",
+              lineHeight: 1.7,
+            }}
+          >
+            꿈의 크기도, 현실 가능성도 따지지 않아요.
+          </p>
+
+          {/* 문단 3 */}
+          <p
+            style={{
+              margin: 0,
+              fontSize: "15px",
+              fontWeight: 700,
+              color: "#111827",
+              lineHeight: 1.7,
+            }}
+          >
+            그냥{" "}
+            <span style={{ color: "#2563eb", fontWeight: 900 }}>
+              당신의 이야기
+            </span>
+            면 됩니다.
+          </p>
+        </div>
+
+        {/* 버튼 */}
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            flexWrap: "wrap",
+            width: "100%",
+          }}
+        >
+          <a
+            href="https://www.wadiz.kr/"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              flex: 1,
+              padding: "10px 16px",
+              borderRadius: "999px",
+              textAlign: "center",
+              background:
+                "linear-gradient(135deg, #00d0aa 0%, #00c1ff 50%, #3b82f6 100%)",
+              color: "#ffffff",
+              fontSize: "14px",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            드림로또 참여하기
+          </a>
+
+          <a
+            href="/project"
+            style={{
+              flex: 1,
+              padding: "10px 16px",
+              borderRadius: "999px",
+              textAlign: "center",
+              border: "1px solid #d1d9ff",
+              backgroundColor: "#f5f7ff",
+              color: "#1d4ed8",
+              fontSize: "14px",
+              fontWeight: 600,
+              textDecoration: "none",
+            }}
+          >
+            드림로또 프로젝트 소개
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-              </div>
-            </div>
-          </section>
 
           
           {/* 검색 + 정렬 */}
