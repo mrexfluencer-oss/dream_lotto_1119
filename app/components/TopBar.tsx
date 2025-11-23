@@ -65,19 +65,32 @@ export default function TopBar() {
         >
           천 원으로 서로의 꿈을 잇는 작은 실험
         </p>
-        <span
-          style={{
-            display: "inline-block",
-            padding: "4px 12px",
-            borderRadius: "999px",
-            backgroundColor: "#eef3ff",
-            color: "#4f46e5",
-            fontSize: "12px",
-            fontWeight: 600,
-          }}
-        >
-          시즌1 진행 중
-        </span>
+
+        {/* 시즌 배지 + 소개 링크 */}
+<div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "8px",
+    marginBottom: "14px",
+    flexWrap: "wrap", // 모바일에서 줄바꿈 자연스럽게
+  }}
+>
+ 
+  <a
+    href="/project"
+    style={{
+      fontSize: "11px",
+      color: "#2563eb",
+      textDecoration: "underline",
+      fontWeight: 600,
+      whiteSpace: "nowrap",
+    }}
+  >
+    프로젝트 소개 바로가기
+  </a>
+</div>
 
         {/* 참여 현황 카드 */}
         <div
@@ -138,10 +151,12 @@ export default function TopBar() {
               }}
             >
               {totalAmount.toLocaleString()}원
+           
             </div>
           </div>
         </div>
       </div>
+     
     </header>
   );
 }

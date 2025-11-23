@@ -347,7 +347,29 @@ export default function HomePage() {
             면 됩니다.
           </p>
         </div>
-
+        {/* 소개 페이지 링크 (가벼운 텍스트 버전) */}
+<p
+  style={{
+    fontSize: "12px",
+    color: "#6b7280",
+    marginTop: "4px",
+    marginBottom: "12px",
+    lineHeight: 1.6,
+  }}
+>
+  드림복권이 어떤 실험인지 궁금하신가요?{" "}
+  <a
+    href="/project"
+    style={{
+      color: "#2563eb",
+      fontWeight: 600,
+      textDecoration: "underline",
+    }}
+  >
+    프로젝트 소개 보러가기
+  </a>
+</p>
+    
         {/* 버튼 */}
         <div
           style={{
