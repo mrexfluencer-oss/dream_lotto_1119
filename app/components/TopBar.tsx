@@ -32,7 +32,7 @@ export default function TopBar() {
       style={{
         background:
           "linear-gradient(135deg, #f5f7fb 0%, #eef3ff 40%, #f9f9ff 100%)",
-        padding: "26px 16px 18px",
+        padding: "10px 16px 18px",
         borderBottom: "1px solid rgba(148, 163, 184, 0.25)",
       }}
     >
@@ -66,31 +66,50 @@ export default function TopBar() {
           천 원으로 서로의 꿈을 잇는 작은 실험
         </p>
 
-        {/* 시즌 배지 + 소개 링크 */}
+        {/* 프로젝트 소개 버튼 (아이콘 + 라운드 버튼) */}
 <div
   style={{
     display: "flex",
-    alignItems: "center",
     justifyContent: "center",
-    gap: "8px",
     marginBottom: "14px",
-    flexWrap: "wrap", // 모바일에서 줄바꿈 자연스럽게
   }}
 >
- 
   <a
     href="/project"
     style={{
-      fontSize: "11px",
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "6px",
+      padding: "6px 12px",
+      borderRadius: "999px",
+      border: "1px solid #d0d7e6",
+      backgroundColor: "#f8fafc",
+      fontSize: "12px",
       color: "#2563eb",
-      textDecoration: "underline",
       fontWeight: 600,
-      whiteSpace: "nowrap",
+      textDecoration: "none",
+      boxShadow: "0 0 0 1px rgba(0,0,0,0.02)",
     }}
   >
+    <span
+      style={{
+        display: "inline-block",
+        width: "14px",
+        height: "14px",
+        borderRadius: "50%",
+        border: "1.5px solid #2563eb",
+        color: "#2563eb",
+        fontSize: "9px",
+        textAlign: "center",
+        lineHeight: "11px",
+      }}
+    >
+      i
+    </span>
     프로젝트 소개 바로가기
   </a>
 </div>
+
 
         {/* 참여 현황 카드 */}
         <div
