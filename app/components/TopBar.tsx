@@ -127,7 +127,7 @@ export default function TopBar() {
               flex: "1 1 150px",
               maxWidth: "280px",
               borderRadius: "14px",
-              padding: "14px 16px",
+              padding: "10px 16px",
               backgroundColor: "#f7f9ff",
               border: "1px solid #e4e8ff",
             }}
@@ -153,7 +153,7 @@ export default function TopBar() {
               flex: "1 1 150px",
               maxWidth: "280px",
               borderRadius: "14px",
-              padding: "14px 16px",
+              padding: "10px 16px",
               backgroundColor: "#fff8f4",
               border: "1px solid #ffe2c8",
             }}
