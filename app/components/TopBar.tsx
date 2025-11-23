@@ -111,69 +111,68 @@ export default function TopBar() {
 </div>
 
 
-        {/* 참여 현황 카드 */}
-        <div
-          style={{
-            marginTop: "18px",
-            display: "flex",
-            gap: "12px",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          {/* 참여자 수 */}
-          <div
-            style={{
-              flex: "1 1 150px",
-              maxWidth: "280px",
-              borderRadius: "14px",
-              padding: "10px 16px",
-              backgroundColor: "#f7f9ff",
-              border: "1px solid #e4e8ff",
-            }}
-          >
-            <div style={{ fontSize: "12px", color: "#7a82a2" }}>
-              현재 참여자 수
-            </div>
-            <div
-              style={{
-                fontSize: "22px",
-                fontWeight: 700,
-                marginTop: "4px",
-                color: "#222",
-              }}
-            >
-              {participantCount.toLocaleString()}명
-            </div>
-          </div>
+{/* 참여 현황 카드 */}
+<div
+  className="topbar-stats"   // ← 여기가 정확한 위치!
+  style={{
+    marginTop: "18px",
+    display: "flex",
+    gap: "12px",
+    justifyContent: "center",
+    flexWrap: "wrap",
+  }}
+>
+  {/* 참여자 수 */}
+  <div
+    style={{
+      flex: "1 1 150px",
+      maxWidth: "280px",
+      borderRadius: "14px",
+      padding: "10px 16px",
+      backgroundColor: "#f7f9ff",
+      border: "1px solid #e4e8ff",
+    }}
+  >
+    <div style={{ fontSize: "12px", color: "#7a82a2" }}>
+      현재 참여자 수
+    </div>
+    <div
+      style={{
+        fontSize: "22px",
+        fontWeight: 700,
+        marginTop: "4px",
+        color: "#222",
+      }}
+    >
+      {participantCount.toLocaleString()}명
+    </div>
+  </div>
 
-          {/* 모금액 */}
-          <div
-            style={{
-              flex: "1 1 150px",
-              maxWidth: "280px",
-              borderRadius: "14px",
-              padding: "10px 16px",
-              backgroundColor: "#fff8f4",
-              border: "1px solid #ffe2c8",
-            }}
-          >
-            <div style={{ fontSize: "12px", color: "#b07c4f" }}>
-              현재 모금액
-            </div>
-            <div
-              style={{
-                fontSize: "22px",
-                fontWeight: 700,
-                marginTop: "4px",
-                color: "#222",
-              }}
-            >
-              {totalAmount.toLocaleString()}원
-           
-            </div>
-          </div>
-        </div>
+  {/* 모금액 */}
+  <div
+    style={{
+      flex: "1 1 150px",
+      maxWidth: "280px",
+      borderRadius: "14px",
+      padding: "10px 16px",
+      backgroundColor: "#fff8f4",
+      border: "1px solid #ffe2c8",
+    }}
+  >
+    <div style={{ fontSize: "12px", color: "#b07c4f" }}>현재 모금액</div>
+    <div
+      style={{
+        fontSize: "22px",
+        fontWeight: 700,
+        marginTop: "4px",
+        color: "#222",
+      }}
+    >
+      {totalAmount.toLocaleString()}원
+    </div>
+  </div>
+</div>
+
       </div>
      
     </header>
