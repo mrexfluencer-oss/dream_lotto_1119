@@ -154,14 +154,4 @@ body {
     width: 100%;
   }
 }
-/* 기본(PC)에서는 보임 */
-.topbar-stats {
-  display: flex;
-}
 
-/* 모바일에서 숨김 */
-@media (max-width: 640px) {
-  .topbar-stats {
-    display: none !important;
-  }
-}
