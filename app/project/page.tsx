@@ -220,10 +220,7 @@ export default function ProjectPage() {
         인터뷰 및 실행 과정은 콘텐츠로 제작됩니다.
       </li>
 
-      <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
-        <strong>4) 시즌마다 새로운 주제로 다시 시작됩니다.</strong><br />
-        드림복권은 지속적인 실행 실험입니다.
-      </li>
+
     </ol>
   </div>
 </section>
