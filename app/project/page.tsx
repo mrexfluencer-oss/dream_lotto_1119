@@ -147,48 +147,86 @@ export default function ProjectPage() {
         </div>
       </section>
 
-      {/* HOW 섹션 */}
-      <section style={{ marginBottom: "64px" }}>
-        <h2
-          style={{
-            fontSize: "20px",
-            fontWeight: 700,
-            marginBottom: "16px",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          어떻게 운영되나요?
-        </h2>
+  {/* HOW 섹션 */}
+<section style={{ marginBottom: "64px" }}>
+  <h2
+    style={{
+      fontSize: "20px",
+      fontWeight: 700,
+      marginBottom: "16px",
+      letterSpacing: "-0.02em",
+    }}
+  >
+    어떻게 운영되나요?
+  </h2>
 
-        <ol
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "22px",
-            paddingLeft: "18px",
-          }}
-        >
-          <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
-            <strong>1) 참가자들은 1,000원을 후원합니다.</strong><br />
-            모든 모금액은 실시간으로 공개됩니다.
-          </li>
+  {/* 이미지 + 리스트 2단 레이아웃 */}
+  <div
+    style={{
+      display: "flex",
+      gap: "24px",
+      alignItems: "flex-start",
+      width: "100%",
+      boxSizing: "border-box",
+      flexWrap: "wrap", // 모바일에서 자동 세로 변환
+    }}
+  >
+    {/* 🔹 LEFT: 이미지 */}
+    <div
+      style={{
+        flex: "0 0 260px",
+        maxWidth: "260px",
+        width: "100%",
+        borderRadius: "12px",
+        overflow: "hidden",
+        border: "1px solid #e5e7eb",
+        backgroundColor: "#f9fafb",
+      }}
+    >
+      <img
+        src="/dream-lotto-flow.png"
+        alt="드림복권 시즌1 운영 흐름"
+        style={{
+          width: "100%",
+          height: "auto",
+          display: "block",
+        }}
+      />
+    </div>
 
-          <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
-            <strong>2) 시즌 종료 후 실시간 랜덤 추첨이 진행됩니다.</strong><br />
-            유튜브·인스타그램 라이브로 누구나 확인할 수 있습니다.
-          </li>
+    {/* 🔹 RIGHT: HOW 리스트 */}
+    <ol
+      style={{
+        flex: 1,
+        minWidth: "260px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "18px",
+        paddingLeft: "18px",
+      }}
+    >
+      <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
+        <strong>1) 참가자들은 1,000원을 후원합니다.</strong><br />
+        모든 모금액은 실시간으로 공개됩니다.
+      </li>
 
-          <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
-            <strong>3) 당첨자에게 꿈 실행 지원금을 전달합니다.</strong><br />
-            인터뷰 및 실행 과정은 콘텐츠로 제작됩니다.
-          </li>
+      <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
+        <strong>2) 시즌 종료 후 실시간 랜덤 추첨이 진행됩니다.</strong><br />
+        유튜브·인스타그램 라이브로 누구나 확인할 수 있습니다.
+      </li>
 
-          <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
-            <strong>4) 시즌마다 새로운 주제로 다시 시작됩니다.</strong><br />
-            드림복권은 지속적인 실행 실험입니다.
-          </li>
-        </ol>
-      </section>
+      <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
+        <strong>3) 당첨자에게 꿈 실행 지원금을 전달합니다.</strong><br />
+        인터뷰 및 실행 과정은 콘텐츠로 제작됩니다.
+      </li>
+
+      <li style={{ fontSize: "15px", color: "#374151", lineHeight: 1.6 }}>
+        <strong>4) 시즌마다 새로운 주제로 다시 시작됩니다.</strong><br />
+        드림복권은 지속적인 실행 실험입니다.
+      </li>
+    </ol>
+  </div>
+</section>
 
       {/* 철학 섹션 */}
       <section style={{ marginBottom: "64px" }}>
