@@ -89,7 +89,7 @@ export default function ProjectPage() {
               우리는 어떤 꿈도 평가하지 않습니다.
             </h3>
             <p style={{ fontSize: "14px", color: "#4b5563", lineHeight: 1.55 }}>
-              점수, 스펙, 서류로 판단하지 않습니다.  
+              꿈의 크기나 가능성, 스펙으로 판단하지 않습니다.  
               누군가에겐 작아 보이는 꿈도, 그 사람의 삶을 바꿀 힘을 가졌기 때문입니다.
             </p>
           </div>
@@ -115,7 +115,7 @@ export default function ProjectPage() {
             </h3>
             <p style={{ fontSize: "14px", color: "#4b5563", lineHeight: 1.55 }}>
               실행은 꿈을 현실로 끌어오는 가장 강력한 방법입니다.  
-              드림복권은 최소 1명이라도 실제 실행이 발생하는 것을 목표로 합니다.
+              드림복권은 실행이 발생하는 것을 목표로 합니다.
             </p>
           </div>
 
@@ -141,7 +141,7 @@ export default function ProjectPage() {
             <p style={{ fontSize: "14px", color: "#4b5563", lineHeight: 1.55 }}>
               1,000원이라는 작은 금액으로  
               누구나 다른 사람의 꿈을 응원할 수 있습니다.  
-              이 작은 응원이 누군가의 첫 걸음을 만들 수 있습니다.
+              이 작은 응원이 내 꿈의 첫 걸음을 만들 수도 있습니다.
             </p>
           </div>
         </div>
